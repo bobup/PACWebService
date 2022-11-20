@@ -39,7 +39,7 @@ my $debug = 0;
 # Details of all web services here:
 my %OurServices = (
 	"GetRecords"		=> {
-		"domain"		=>	"pacificmasters.org/",
+		"domain"		=>	"data.pacificmasters.org/",
 		"path"			=>	"api/pacrecords/GetRecords.php"
 	},
 	"GetRecords_dev"	=> {
@@ -129,6 +129,20 @@ sub GetData( $$$ ) {
 			print "Response:\n";
 			print Dumper( $callbackState{content} );
 		}
+
+
+
+#				error		=> "HTTP error: '" . $httpResponseRef->{status} . "',\n    reason: '" .
+#					$httpResponseRef->{reason} . "',\n    final URL: '" . $httpResponseRef->{url} . "'\n" .
+#					"    full URL: '" . $fullUrl . "'",
+
+
+#				error		=> "HTTP error: '" . $httpResponseRef->{status} . "', reason: '" .
+#					$httpResponseRef->{reason} . "', final URL: '" . $httpResponseRef->{url} . "', " .
+#					"full URL: '" . $fullUrl . "'",
+
+
+
 		if( !$httpResponseRef->{success} ) {
 			# failure - return an error
 			my $error = {
